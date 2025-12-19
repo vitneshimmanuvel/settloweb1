@@ -1,0 +1,102 @@
+/* Excellence Section - Dark Cards with Arrow Bullets */
+.excellence {
+  background: #f5f7fa;
+}
+
+.excellence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.excellence-card {
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.excellence-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.excellence-card.active {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+  border-color: #ff6b35;
+}
+
+.excellence-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.excellence-description {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.excellence-features {
+  margin-top: 24px;
+}
+
+.features-divider {
+  height: 1px;
+  background: linear-gradient(90deg, #ff6b35, transparent);
+  margin-bottom: 24px;
+}
+
+.excellence-features ul {
+  margin-bottom: 24px;
+}
+
+.excellence-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.feature-arrow {
+  flex-shrink: 0;
+  color: #3b82f6;
+  margin-top: 4px;
+}
+
+/* Blue highlighted keywords */
+.feature-highlight {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.excellence-features .btn-primary {
+  background: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.excellence-features .btn-primary:hover {
+  background: #e55b2a;
+  border-color: #e55b2a;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .excellence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .excellence-card {
+    padding: 24px;
+  }
+}
