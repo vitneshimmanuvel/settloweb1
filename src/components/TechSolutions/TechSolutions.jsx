@@ -1,75 +1,121 @@
-import { FiCode, FiSmartphone, FiGlobe, FiShoppingCart, FiCloud, FiUsers, FiLink, FiDatabase, FiShield } from 'react-icons/fi';
+import {
+  FiUsers,
+  FiTarget,
+  FiTrendingUp,
+  FiShield,
+  FiCpu,
+  FiGlobe,
+} from 'react-icons/fi';
 import './TechSolutions.css';
 
 const TechSolutions = () => {
-  const solutions = [
+  const highlights = [
     {
-      title: 'Software Development',
-      description: 'Custom software solutions built with modern technologies to meet your specific business requirements.',
-      icon: <FiCode size={28} />,
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop'
+      icon: <FiTarget />,
+      label: 'Product‑first mindset',
+      text: 'Every engagement starts from your business outcomes, not just tech choices.',
     },
     {
-      title: 'App Development',
-      description: 'Native and cross-platform mobile applications that deliver exceptional user experiences.',
-      icon: <FiSmartphone size={28} />,
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop'
+      icon: <FiTrendingUp />,
+      label: 'Growth focused',
+      text: 'We design systems that reduce manual work and unlock new revenue.',
     },
     {
-      title: 'Web Development',
-      description: 'Responsive, high-performance websites and web applications for modern businesses.',
-      icon: <FiGlobe size={28} />,
-      image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=250&fit=crop'
+      icon: <FiShield />,
+      label: 'Secure & reliable',
+      text: 'Best practices in auth, access control, and cloud infra for peace of mind.',
     },
     {
-      title: 'E-Commerce Solutions',
-      description: 'Scalable online stores and marketplace platforms to grow your digital commerce.',
-      icon: <FiShoppingCart size={28} />,
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop'
+      icon: <FiCpu />,
+      label: 'Modern stack',
+      text: 'React, Node.js, PostgreSQL, MongoDB, AWS and more—picked to fit your use case.',
     },
-    {
-      title: 'Cloud Services',
-      description: 'Cloud migration, infrastructure setup, and management for optimal performance.',
-      icon: <FiCloud size={28} />,
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop'
-    },
-    {
-      title: 'HR & Talent Solutions',
-      description: 'Connect with skilled professionals and build high-performing teams.',
-      icon: <FiUsers size={28} />,
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop'
-    }
+  ];
+
+  const stats = [
+    { value: '50+', label: 'Projects Delivered' },
+    { value: '1K +', label: 'Talents Connected' },
+    { value: '98%', label: 'Client Satisfaction' },
+    { value: '3+', label: 'Years Experience' },
   ];
 
   return (
-    <section className="tech-solutions section">
-      <div className="container">
-        <h2 className="section-title">Our Solutions</h2>
-        <h3 className="tech-solutions-subtitle">Empowering Your Digital Journey</h3>
-        <p className="section-subtitle">
-          From concept to deployment, we deliver comprehensive technology solutions tailored to your needs.
-        </p>
+    <section className="who-settlo section">
+      <div className="container who-settlo-layout">
+        {/* Left: Text content */}
+        <div className="who-settlo-content">
+          <span className="who-settlo-tag">Who is Settlo?</span>
+          <h2 className="who-settlo-title">
+            Your <span>long‑term tech partner</span> for AI, Cloud & CRM‑driven growth.
+          </h2>
+          <p className="who-settlo-intro">
+            Settlo Tech Solutions is an IT partner based in Erode, Tamil Nadu, helping
+            businesses modernize operations with smart CRM, web, mobile, and automation
+            platforms tailored to Indian and global markets.
+          </p>
+          <p className="who-settlo-intro secondary">
+            From canteen automation to manufacturing CRMs and education platforms,
+            Settlo bridges real‑world processes with robust, scalable digital products
+            that teams love to use every day.
+          </p>
 
-        <div className="solutions-grid">
-          {solutions.map((solution, index) => (
-            <div key={index} className="solution-card">
-              <div className="solution-image">
-                <img src={solution.image} alt={solution.title} />
-                <div className="solution-overlay">
-                  <span className="solution-icon-overlay">{solution.icon}</span>
+          <div className="who-settlo-highlights">
+            {highlights.map((item, index) => (
+              <div key={index} className="highlight-item">
+                <div className="highlight-icon">{item.icon}</div>
+                <div className="highlight-texts">
+                  <h4 className="highlight-label">{item.label}</h4>
+                  <p className="highlight-text">{item.text}</p>
                 </div>
               </div>
-              <div className="solution-content">
-                <div className="solution-icon">{solution.icon}</div>
-                <h4 className="solution-title">{solution.title}</h4>
-                <p className="solution-description">{solution.description}</p>
-                <div className="solution-actions">
-                  <a href="#" className="btn btn-sm btn-primary">Learn More</a>
-                  <a href="#contact" className="btn btn-sm btn-secondary">Contact Us</a>
-                </div>
+            ))}
+          </div>
+
+          <div className="who-settlo-cta-row">
+            <a href="#contact" className="btn btn-primary">
+              Talk to Our Team
+            </a>
+            <a href="#case-studies" className="btn btn-ghost">
+              View Case Studies
+            </a>
+          </div>
+        </div>
+
+        {/* Right: Image + stats */}
+        <div className="who-settlo-side">
+          <div className="who-settlo-main-card">
+            <div className="who-settlo-main-image">
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=450&fit=crop"
+                alt="Settlo team collaborating"
+              />
+            </div>
+            <div className="who-settlo-main-content">
+              <h3>Built for ambitious teams</h3>
+              <p>
+                Whether you are a startup validating your MVP or an enterprise upgrading
+                legacy systems, Settlo acts as your remote tech team that ships fast and
+                stays with you for the long run.
+              </p>
+              <div className="who-settlo-badges">
+                <span className="badge">
+                  <FiGlobe /> India & Global clients
+                </span>
+                <span className="badge">
+                  <FiUsers /> Domain‑driven solutions
+                </span>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="who-settlo-stats">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-card">
+                <div className="stat-value">{stat.value}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

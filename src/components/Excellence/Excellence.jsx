@@ -7,25 +7,25 @@ const Excellence = () => {
 
   // Parse feature text to highlight keywords in blue
   const parseFeature = (text) => {
-    // Keywords to highlight in blue
     const keywords = [
-      'MVP and SaaS development services',
-      'CTO-as-a-service',
-      'Data Analytics and DevOps services',
-      'Technology Consulting',
-      'Application Modernization',
+      'digital products',
+      'internal platforms',
+      'customer and staff journeys',
+      'Cloud-native platforms',
       'Custom Software Development',
+      'legacy modernization',
       'QA & Testing',
-      'Cloud Development',
-      'Software Consulting & Development',
-      'Staff Augmentation',
-      'White Label services'
+      'Dedicated squads',
+      'white-label delivery',
     ];
 
     let result = text;
-    keywords.forEach(keyword => {
-      if (text.includes(keyword)) {
-        result = result.replace(keyword, `<span class="feature-highlight">${keyword}</span>`);
+    keywords.forEach((keyword) => {
+      if (result.includes(keyword)) {
+        result = result.replace(
+          keyword,
+          `<span class="feature-highlight">${keyword}</span>`
+        );
       }
     });
     return result;
@@ -33,35 +33,38 @@ const Excellence = () => {
 
   const businessTypes = [
     {
-      title: 'Startup Launchpad',
-      description: 'Conquer the challenges of rapid scaling, budget constraints, and market validation with our expertise.',
+      title: 'Product & Platform Lab',
+      description:
+        'For businesses that want to turn recurring, manual work into scalable digital products and internal platforms.',
       features: [
-        'Get to market fast and cost-effectively with our MVP and SaaS development services.',
-        'Align technology with business goals with our CTO-as-a-service offering.',
-        'Make informed choices using our Data Analytics and DevOps services.',
-        'Avoid costly mistakes with our Technology Consulting, ensuring long-term success.'
-      ]
+        'Transform everyday operations like canteen management, service tracking, and lead handling into reusable digital products.',
+        'Design consistent customer and staff journeys across web, mobile, and CRM so every touchpoint stays connected.',
+        'Reuse common building blocks such as auth, roles, approvals, billing, and reporting to reduce time to launch.',
+        'Evolve your internal platforms continuously with new features, integrations, and automation instead of one‑off projects.',
+      ],
     },
     {
       title: 'Enterprise Evolution',
-      description: 'Overcome challenges related to scalability, security, maintenance, and cost-effectiveness as your business scales.',
+      description:
+        'For growing businesses modernizing their core operations with AI, cloud, and custom workflow automation.',
       features: [
-        'Revitalize outdated systems with our Application Modernization expertise.',
-        'Our Custom Software Development services deliver secure, scalable solutions.',
-        'Ensure exceptional performance with our thorough QA & Testing services.',
-        'Unlock enhanced scalability, security, and cost-efficiency with Cloud Development.'
-      ]
+        'Modernize ERPs, CRMs, and internal tools through pragmatic legacy modernization instead of risky big‑bang rewrites.',
+        'Build secure, scalable line‑of‑business apps with our Custom Software Development for web, mobile, and canteen automation.',
+        'Keep mission‑critical systems stable with structured QA & Testing across integrations, workflows, and reports.',
+        'Move workloads to Cloud-native platforms on AWS or other clouds with performance, cost, and security baked in.',
+      ],
     },
     {
       title: 'Agency Acceleration',
-      description: 'We guide agencies through complex tech landscapes to deliver exceptional, tailored software solutions.',
+      description:
+        'For agencies that want to deliver serious tech outcomes to clients without maintaining a large in‑house dev team.',
       features: [
-        'Access top-tier tech talent through Software Consulting & Development.',
-        'Deliver the highest-quality software with our rigorous QA & Testing.',
-        'Adapt to project demands with our Staff Augmentation solutions.',
-        'Expand your portfolio without in-house development through White Label services.'
-      ]
-    }
+        'Ship portals, CRMs, dashboards, and e‑commerce backends as ready productized solutions under your own brand.',
+        'Guarantee smooth launches and handovers with QA & Testing built into every project milestone.',
+        'Scale delivery quickly using Dedicated squads and Staff Augmentation across frontend, backend, and cloud.',
+        'Offer full‑stack and AI capabilities with white-label delivery while you continue to own the client relationship.',
+      ],
+    },
   ];
 
   return (
@@ -69,19 +72,23 @@ const Excellence = () => {
       <div className="container">
         <h2 className="section-title">Leading the Industry With Excellence</h2>
         <p className="section-subtitle">
-          Settlo crafts transformative software solutions to empower businesses of all sizes.
+          Settlo builds AI & Cloud driven CRMs, web platforms, and automation systems that
+          match real business workflows across manufacturing, services, education, and more.
         </p>
 
         <div className="excellence-grid">
           {businessTypes.map((type, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`excellence-card ${activeCard === index ? 'active' : ''}`}
               onClick={() => setActiveCard(index)}
             >
+              <div className="excellence-card-icon">
+                {index === 0 ? '🚀' : index === 1 ? '🏢' : '🎯'}
+              </div>
               <h3 className="excellence-title">{type.title}</h3>
               <p className="excellence-description">{type.description}</p>
-              
+
               {activeCard === index && (
                 <div className="excellence-features">
                   <div className="features-divider"></div>
@@ -89,11 +96,15 @@ const Excellence = () => {
                     {type.features.map((feature, fIndex) => (
                       <li key={fIndex}>
                         <FiChevronRight className="feature-arrow" />
-                        <span dangerouslySetInnerHTML={{ __html: parseFeature(feature) }} />
+                        <span
+                          dangerouslySetInnerHTML={{ __html: parseFeature(feature) }}
+                        />
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" className="btn btn-primary">Explore More</a>
+                  <a href="#contact" className="btn btn-primary">
+                    Explore More
+                  </a>
                 </div>
               )}
             </div>

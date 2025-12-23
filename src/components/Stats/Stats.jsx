@@ -7,12 +7,12 @@ const Stats = () => {
   const sectionRef = useRef(null);
 
   const stats = [
-    { value: 500, suffix: '+', label: 'Projects Delivered', icon: <FiBriefcase /> },
-    { value: 10000, suffix: '+', label: 'Talents Connected', icon: <FiUsers /> },
+    { value: 50, suffix: '+', label: 'Projects Delivered', icon: <FiBriefcase /> },
+    { value: 1000, suffix: '+', label: 'Talents Connected', icon: <FiUsers /> },
     { value: 50, suffix: '+', label: 'Industry Partners', icon: <FiCheckCircle /> },
     { value: 98, suffix: '%', label: 'Client Satisfaction', icon: <FiAward /> },
-    { value: 10, suffix: '+', label: 'Years Experience', icon: <FiClock /> },
-    { value: 5, suffix: '', label: 'Global Offices', icon: <FiGlobe /> }
+    { value: 3, suffix: '+', label: 'Years Experience', icon: <FiClock /> },
+    { value: 2, suffix: '', label: 'Global Offices', icon: <FiGlobe /> }
   ];
 
   useEffect(() => {

@@ -18,7 +18,6 @@ const Header = () => {
     { label: 'AI Integration', section: '#services', type: 'service' },
     { label: 'Manufacturing CRM', section: 'https://settlofullcrm.vercel.app', type: 'demo' },
     { label: 'Healthcare Solutions', section: 'https://settlohealthcare.vercel.app', type: 'demo' },
-    { label: 'Education CRM', section: 'https://settlocollegecrm.vercel.app', type: 'demo' },
     { label: 'Contact Us', section: '#contact', type: 'page' },
     { label: 'About Us', section: '#about', type: 'page' },
     { label: 'Our Technologies', section: '#tech', type: 'page' },
@@ -26,9 +25,9 @@ const Header = () => {
 
   // Filter recommendations based on search query
   const filteredRecommendations = searchQuery.trim()
-    ? recommendations.filter(item => 
-        item.label.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+    ? recommendations.filter(item =>
+      item.label.toLowerCase().includes(searchQuery.toLowerCase())
+    )
     : recommendations.slice(0, 6);
 
   // Handle click outside search
@@ -59,22 +58,21 @@ const Header = () => {
   };
 
   const navItems = [
-    { 
-      label: 'Solutions', 
-      hasDropdown: true,
-      items: [
-        { label: 'Manufacturing CRM', href: 'https://settlofullcrm.vercel.app' },
-        { label: 'HR Management', href: 'https://settlohrdemo.vercel.app' },
-        { label: 'E-Commerce & Sports', href: 'https://settlo-sports-hub.netlify.app' },
-        { label: 'Real Estate CRM', href: 'https://settlo-realestate-crm.netlify.app' },
-        { label: 'Healthcare', href: 'https://settlohealthcare.vercel.app' },
-        { label: 'Food Industry', href: 'https://settlohotel.vercel.app' },
-        { label: 'Education CRM', href: 'https://settlocollegecrm.vercel.app' },
-        { label: 'Canteen Automation', href: 'https://settlocanteen.vercel.app' },
-      ]
-    },
-    { 
-      label: 'Services', 
+    // {
+    //   label: 'Solutions',
+    //   hasDropdown: true,
+    //   items: [
+    //     { label: 'Manufacturing CRM', href: 'https://settlofullcrm.vercel.app' },
+    //     { label: 'HR Management', href: 'https://settlohrdemo.vercel.app' },
+    //     { label: 'E-Commerce & Sports', href: 'https://settlo-sports-hub.netlify.app' },
+    //     { label: 'Real Estate CRM', href: 'https://settlo-realestate-crm.netlify.app' },
+    //     { label: 'Healthcare', href: 'https://settlohealthcare.vercel.app' },
+    //     { label: 'Food Industry', href: 'https://settlohotel.vercel.app' },
+    //     { label: 'Face Recognition/Biometrics', href: 'https://settlocanteen.vercel.app' },
+    //   ]
+    // },
+    {
+      label: 'Services',
       hasDropdown: true,
       items: [
         { label: 'CRM Software Development', href: '#services' },
@@ -84,13 +82,12 @@ const Header = () => {
         { label: 'Cloud Solutions', href: '#services' },
       ]
     },
-    { 
-      label: 'Industries', 
+    {
+      label: 'Industries',
       hasDropdown: true,
       items: [
         { label: 'Manufacturing', href: '#' },
         { label: 'Healthcare', href: '#' },
-        { label: 'Education', href: '#' },
         { label: 'Real Estate', href: '#' },
         { label: 'Hospitality', href: '#' },
         { label: 'Retail & E-commerce', href: '#' },
@@ -102,22 +99,22 @@ const Header = () => {
 
   return (
     <header className="header">
-      {/* Top Bar */}
+      
       <div className="header-top">
         <div className="container">
           <div className="header-top-content">
             <div className="contact-info">
               <a href="tel:+919876543210" className="contact-item">
                 <Phone size={14} />
-                <span>+91 98765 43210</span>
+                <span>+91 9003633356</span>
               </a>
-              <a href="mailto:info@settlo.in" className="contact-item">
+              <a href="mailto:info@settlo.com" className="contact-item">
                 <Mail size={14} />
-                <span>info@settlo.in</span>
+                <span>info@settlo.com</span>
               </a>
             </div>
             <div className="top-tagline">
-              Innovate Ideas • Educate Minds • Connect Talents
+              Empowering Businesses With AI, Data Analytics & Cloud
             </div>
           </div>
         </div>
@@ -136,8 +133,8 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="nav-desktop">
               {navItems.map((item, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="nav-item"
                   onMouseEnter={() => item.hasDropdown && setActiveDropdown(index)}
                   onMouseLeave={() => setActiveDropdown(null)}
@@ -149,9 +146,9 @@ const Header = () => {
                   {item.hasDropdown && activeDropdown === index && (
                     <div className="dropdown-menu">
                       {item.items.map((subItem, subIndex) => (
-                        <a 
-                          key={subIndex} 
-                          href={subItem.href} 
+                        <a
+                          key={subIndex}
+                          href={subItem.href}
                           className="dropdown-item"
                           target={subItem.href.startsWith('http') ? '_blank' : '_self'}
                           rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : ''}
@@ -169,7 +166,7 @@ const Header = () => {
             <div className="header-actions">
               {/* Search */}
               <div className="search-wrapper" ref={searchRef}>
-                <button 
+                <button
                   className={`icon-btn ${searchOpen ? 'active' : ''}`}
                   onClick={() => {
                     setSearchOpen(!searchOpen);
@@ -178,7 +175,7 @@ const Header = () => {
                 >
                   <Search size={20} />
                 </button>
-                
+
                 {searchOpen && (
                   <div className="search-dropdown">
                     <input
@@ -192,7 +189,7 @@ const Header = () => {
                       onFocus={() => setShowRecommendations(true)}
                       autoFocus
                     />
-                    
+
                     {showRecommendations && filteredRecommendations.length > 0 && (
                       <div className="search-recommendations">
                         {filteredRecommendations.map((item, index) => (
@@ -219,7 +216,7 @@ const Header = () => {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button 
+            <button
               className="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
@@ -246,7 +243,7 @@ const Header = () => {
 
           {navItems.map((item, index) => (
             <div key={index} className="mobile-nav-item">
-              <div 
+              <div
                 className="mobile-nav-link"
                 onClick={() => item.hasDropdown && setActiveDropdown(activeDropdown === index ? null : index)}
               >
@@ -258,9 +255,9 @@ const Header = () => {
               {item.hasDropdown && activeDropdown === index && (
                 <div className="mobile-dropdown">
                   {item.items.map((subItem, subIndex) => (
-                    <a 
-                      key={subIndex} 
-                      href={subItem.href} 
+                    <a
+                      key={subIndex}
+                      href={subItem.href}
                       className="mobile-dropdown-item"
                       target={subItem.href.startsWith('http') ? '_blank' : '_self'}
                     >

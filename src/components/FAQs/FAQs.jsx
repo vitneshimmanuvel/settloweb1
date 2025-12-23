@@ -6,8 +6,8 @@ const FAQs = () => {
 
   const faqs = [
     {
-      question: 'Why choose Dotsquares as a IT software service provider?',
-      answer: 'Over two decades of experience and a team of 1,000+ skilled developers have helped us build a network of over 20,000 satisfied clients globally. We achieve this by prioritising a deep understanding of your needs and a commitment to delivering exceptional results.'
+      question: 'Why choose Settlo as your IT software service provider?',
+      answer: 'Settlo combines deep technology expertise with a client-centric approach to deliver solutions that drive real business value. Our team of skilled developers prioritizes understanding your unique needs to deliver exceptional results that exceed expectations.'
     },
     {
       question: 'How do you handle project management and timelines?',
@@ -37,11 +37,11 @@ const FAQs = () => {
 
         <div className="faqs-list">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`faq-item ${openIndex === index ? 'active' : ''}`}
             >
-              <button 
+              <button
                 className="faq-question"
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
               >

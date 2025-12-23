@@ -1,134 +1,129 @@
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
-  const offices = [
-    {
-      city: 'BRIGHTON, UK',
-      address: 'Unit 2, Albourne Court, Henfield Road, Albourne, West Sussex, BN6 9FF',
-      phone: '+44 1273 575190'
-    },
-    {
-      city: 'LONDON, UK',
-      address: 'Unit 2 Hobbs Court, 2 Jacob Street, London SE1 2BG',
-      phone: '+44 208 0901819'
-    },
-    {
-      city: 'AUSTRALIA',
-      address: '11/475 Blackburn Road, Mount Waverley, Vic 3149',
-      phone: '+61 3 9511 5598'
-    },
-    {
-      city: 'DUBAI UAE',
-      address: '10, Bayti 22, Street 35, Al Safa 2 Dubai, UAE',
-      phone: '+971 50 422 7935'
-    },
-    {
-      city: 'USA',
-      address: '6701 Democracy Blvd. Suite 300, Bethesda, MD 20817',
-      phone: '+1 301 563 9488'
-    },
-    {
-      city: 'GLOBAL CAPABILITY CENTER',
-      address: 'CP4-228, 229, Apparel Park, Mahal Road, Jagatpura, Jaipur, Rajasthan, India 302017',
-      phone: '+91 98290 29555'
-    }
-  ];
-
-  const quickLinks = [
-    { label: 'Our Company', href: '#' },
-    { label: 'Careers', href: '#' },
-    { label: 'Expertise', href: '#' },
-    { label: 'Press', href: '#' },
-    { label: 'Partnership', href: '#' },
-    { label: 'Contact us', href: '#contact' },
-    { label: 'FAQ', href: '#' },
-    { label: 'Sitemap', href: '#' }
-  ];
-
   return (
     <footer className="footer">
-      <div className="footer-newsletter">
+      {/* Consultation Form Section */}
+      <div className="footer-consultation">
         <div className="container">
-          <div className="newsletter-content">
-            <h3>Get insights from the experts</h3>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Enter your email address" />
-              <button className="btn btn-orange">Subscribe</button>
+          <div className="consultation-content">
+            <div className="consultation-text">
+              <h3>Free Consultation</h3>
+              <p>Get A Free Quote For Your Project</p>
+            </div>
+            <div className="consultation-form">
+              <select className="form-select">
+                <option value="">– Select Service –</option>
+                <option value="web">Web Development</option>
+                <option value="mobile">Mobile App Development</option>
+                <option value="software">Software Development</option>
+                <option value="ecommerce">E-commerce Solutions</option>
+                <option value="cloud">Cloud Solutions</option>
+                <option value="ai">AI & Data Analytics</option>
+              </select>
+              <button className="btn btn-orange">SUBMIT</button>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Main Footer */}
       <div className="footer-main">
         <div className="container">
           <div className="footer-grid">
-            <div className="footer-column footer-about">
-              <div className="footer-logo">
-                <div className="logo-icon">
-                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <rect width="40" height="40" rx="8" fill="#0066cc"/>
-                    <circle cx="12" cy="12" r="4" fill="white"/>
-                    <circle cx="28" cy="12" r="4" fill="white"/>
-                    <circle cx="12" cy="28" r="4" fill="white"/>
-                    <circle cx="28" cy="28" r="4" fill="white"/>
-                  </svg>
-                </div>
-                <span className="logo-text">dotsquares</span>
+            {/* Office Section */}
+            <div className="footer-column">
+              <h4 className="footer-heading">Contact Us</h4>
+              <div className="office-info">
+                <h5 className="office-title">Head Office</h5>
+                <p className="office-name">Settlo Tech Solutions</p>
+                <p className="office-address">
+                  121 Akhil Plaza, San Perundurai Road, Erode.
+                </p>
+                <p className="office-contact">
+                  Phone: <a href="tel:+919003633356">+91 9003633356</a>
+                </p>
+                <p className="office-contact">
+                  Email: <a href="mailto:settlotech@gmail.com">info@settlo.com</a>
+                </p>
               </div>
-              <p className="footer-description">
-                Award-winning software development company delivering innovative solutions 
-                for startups and Fortune 500 companies worldwide.
-              </p>
-              <div className="social-links">
-                <a href="#" className="social-link">LinkedIn</a>
-                <a href="#" className="social-link">Twitter</a>
-                <a href="#" className="social-link">Facebook</a>
-                <a href="#" className="social-link">YouTube</a>
+
+              {/* Social Links */}
+              <div className="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=100089781227221" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <FaFacebook size={24} />
+                </a>
+                <a href="https://x.com/Settloacademy" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                  <FaTwitter size={24} />
+                </a>
+                <a href="https://www.instagram.com/settlo_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <FaInstagram size={24} />
+                </a>
+                <a href="https://www.linkedin.com/in/settlo-academy-7534a027b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <FaLinkedin size={24} />
+                </a>
               </div>
+
+              {/* WhatsApp Button */}
+              <a 
+                href="https://chat.whatsapp.com/DTB8UL9oYqZ59b8PAgfhik" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="whatsapp-btn"
+              >
+                <FaWhatsapp size={20} />
+                JOIN US
+              </a>
             </div>
 
+            {/* Navigation Links */}
             <div className="footer-column">
-              <h4 className="footer-heading">Quick Links</h4>
+              <h4 className="footer-heading">Company</h4>
               <ul className="footer-links">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href}>{link.label}</a>
-                  </li>
-                ))}
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
               </ul>
             </div>
 
-            <div className="footer-column footer-offices">
-              <h4 className="footer-heading">Our Offices</h4>
-              <div className="offices-grid">
-                {offices.map((office, index) => (
-                  <div key={index} className="office-item">
-                    <h5 className="office-city">{office.city}</h5>
-                    <p className="office-address">{office.address}</p>
-                    <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="office-phone">
-                      {office.phone}
-                    </a>
-                  </div>
-                ))}
-              </div>
+            {/* Tech Services */}
+            <div className="footer-column">
+              <h4 className="footer-heading">Tech Services</h4>
+              <ul className="footer-links">
+                <li><a href="#services">Web Development</a></li>
+                <li><a href="#services">Mobile App Development</a></li>
+                <li><a href="#services">Software Development</a></li>
+                <li><a href="#services">E-commerce Solutions</a></li>
+                <li><a href="#services">Cloud Solutions</a></li>
+                <li><a href="#services">AI & Data Analytics</a></li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div className="footer-column">
+              <h4 className="footer-heading">Resources</h4>
+              <ul className="footer-links">
+                <li><a href="#faqs">FAQ</a></li>
+                <li><a href="#articles">Blog & Articles</a></li>
+                <li><a href="#tech-stack">Technology Stack</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms Of Service</a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-content">
-            <div className="footer-legal">
-              <p>© 2002 - 2025 Dotsquares Ltd. All rights reserved.</p>
-              <p className="registration">Registered in England & Wales No.: 04381390 | VAT Reg.: 868 8581 51</p>
-            </div>
-            <div className="footer-legal-links">
-              <a href="#">Terms of Use</a>
-              <a href="#">Privacy</a>
-              <a href="#">Terms & Conditions</a>
-              <a href="#">Shipping Policy</a>
-            </div>
+            <p>© 2024 - 2025 Settlo Tech Solutions. All rights reserved.</p>
           </div>
         </div>
       </div>

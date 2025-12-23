@@ -37,17 +37,17 @@ const Services = () => {
       <div className="container">
         <h2 className="section-title">What We Offer</h2>
         <p className="section-subtitle">
-          Comprehensive solutions to innovate your ideas, educate your teams, and connect you with the right talents.
+          Comprehensive solutions to transform your ideas into reality and drive business growth.
         </p>
-        
+
         <div className="services-new-grid">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             const isHovered = hoveredCard === index;
-            
+
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`service-image-card ${isHovered ? 'hovered' : ''}`}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -64,7 +64,7 @@ const Services = () => {
                     <IconComponent size={24} className="service-card-icon" />
                     <h3 className="service-card-title">{service.title}</h3>
                   </div>
-                  
+
                   <p className="service-card-desc">
                     {isHovered ? service.description : service.shortDesc}
                   </p>
@@ -88,47 +88,68 @@ const Services = () => {
 
         {/* Second Row - More Services */}
         <div className="services-new-grid services-row-2">
-          <div className="service-image-card">
-            <div className="service-card-bg">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="E-commerce" />
-              <div className="service-card-overlay"></div>
-            </div>
-            <div className="service-card-content">
-              <div className="service-card-header">
-                <FiCode size={24} className="service-card-icon" />
-                <h3 className="service-card-title">E-Commerce Solutions</h3>
-              </div>
-              <p className="service-card-desc">Complete online store development with payment integration.</p>
-            </div>
-          </div>
+          {[
+            {
+              icon: FiCode,
+              title: 'E-Commerce Solutions',
+              shortDesc: 'Complete online store development',
+              description: 'Complete online store development with payment integration, inventory management, and customer analytics.',
+              image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+              link: '#contact'
+            },
+            {
+              icon: FiCode,
+              title: 'Cloud Services',
+              shortDesc: 'Scalable cloud infrastructure',
+              description: 'Scalable cloud infrastructure and deployment solutions with AWS, Azure, and Google Cloud expertise.',
+              image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+              link: '#contact'
+            },
+            {
+              icon: FiCode,
+              title: 'Data Analytics',
+              shortDesc: 'Transform data into insights',
+              description: 'Turn your data into actionable business insights with advanced analytics and reporting dashboards.',
+              image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop',
+              link: '#contact'
+            }
+          ].map((service, index) => {
+            const IconComponent = service.icon;
+            const isHovered = hoveredCard === index + 3;
 
-          <div className="service-image-card">
-            <div className="service-card-bg">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="Cloud" />
-              <div className="service-card-overlay"></div>
-            </div>
-            <div className="service-card-content">
-              <div className="service-card-header">
-                <FiCode size={24} className="service-card-icon" />
-                <h3 className="service-card-title">Cloud Services</h3>
+            return (
+              <div
+                key={index}
+                className={`service-image-card ${isHovered ? 'hovered' : ''}`}
+                onMouseEnter={() => setHoveredCard(index + 3)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <div className="service-card-bg">
+                  <img src={service.image} alt={service.title} />
+                  <div className="service-card-overlay"></div>
+                </div>
+                <div className="service-card-content">
+                  <div className="service-card-header">
+                    <IconComponent size={24} className="service-card-icon" />
+                    <h3 className="service-card-title">{service.title}</h3>
+                  </div>
+                  <p className="service-card-desc">
+                    {isHovered ? service.description : service.shortDesc}
+                  </p>
+                  <div className={`service-card-dropdown ${isHovered ? 'show' : ''}`}>
+                    <div className="service-card-buttons">
+                      <a href={service.link} className="btn-service-outline">
+                        Learn More
+                      </a>
+                      <a href={service.link} className="btn-service-filled">
+                        Contact Us <FiArrowRight size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="service-card-desc">Scalable cloud infrastructure and deployment solutions.</p>
-            </div>
-          </div>
-
-          <div className="service-image-card">
-            <div className="service-card-bg">
-              <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop" alt="Analytics" />
-              <div className="service-card-overlay"></div>
-            </div>
-            <div className="service-card-content">
-              <div className="service-card-header">
-                <FiCode size={24} className="service-card-icon" />
-                <h3 className="service-card-title">Data Analytics</h3>
-              </div>
-              <p className="service-card-desc">Turn your data into actionable business insights.</p>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

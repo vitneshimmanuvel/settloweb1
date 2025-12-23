@@ -25,7 +25,7 @@ const CaseStudies = () => {
     },
     {
       category: 'Website & Enterprise Application',
-      title: 'Dotsquares Enhances Networking Opportunities for GonnaHappen',
+      title: 'Settlo Enhances Networking Opportunities for GonnaHappen',
       country: 'GB',
       technology: 'Drupal',
       flag: '🇬🇧'

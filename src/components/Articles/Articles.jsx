@@ -3,20 +3,20 @@ import './Articles.css';
 const Articles = () => {
   const articles = [
     {
-      image: '📰',
-      title: 'Dotsquares Becomes Official Progress Sitefinity Partner',
+      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=250&fit=crop',
+      title: 'Settlo Becomes Official Progress Sitefinity Partner',
       date: 'December 2024',
       category: 'Partnership'
     },
     {
-      image: '🤖',
-      title: 'How HubSpot\'s AI-Powered Smart CRM Is Redefining Customer Relationships',
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop',
+      title: 'How AI-Powered Smart CRM Is Redefining Customer Relationships',
       date: 'December 2024',
       category: 'Technology'
     },
     {
-      image: '🔐',
-      title: 'How to Fix the Next.js RCE Vulnerability (CVE-2025-66478)',
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop',
+      title: 'Best Practices for Securing Your Web Applications in 2025',
       date: 'November 2024',
       category: 'Security'
     }
@@ -34,7 +34,7 @@ const Articles = () => {
           {articles.map((article, index) => (
             <article key={index} className="article-card">
               <div className="article-image">
-                <span className="article-placeholder">{article.image}</span>
+                <img src={article.image} alt={article.title} />
               </div>
               <div className="article-content">
                 <div className="article-meta">

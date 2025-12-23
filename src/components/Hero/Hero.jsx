@@ -8,11 +8,6 @@ import {
   UtensilsCrossed, 
   GraduationCap, 
   Coffee,
-  Smartphone,
-  Globe,
-  Code,
-  Cpu,
-  Star,
   ArrowRight,
   X,
   User,
@@ -104,15 +99,7 @@ const Hero = () => {
     },
   ];
 
-  // Our Services
-  const services = [
-    { label: 'CRM Software', icon: Code },
-    { label: 'Mobile Apps', icon: Smartphone },
-    { label: 'Web Development', icon: Globe },
-    { label: 'AI Integration', icon: Cpu },
-  ];
-
-  // Validate email (Gmail format)
+  // Validate email
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
     return emailRegex.test(email);
@@ -166,7 +153,7 @@ const Hero = () => {
       return;
     }
 
-    // Store lead data (you can send this to your backend)
+    // Store lead data
     const leadData = {
       name: formData.name,
       email: formData.email,
@@ -177,7 +164,7 @@ const Hero = () => {
     
     console.log('Lead captured:', leadData);
     
-    // Store in localStorage for demo purposes
+    // Store in localStorage
     const existingLeads = JSON.parse(localStorage.getItem('settlo_leads') || '[]');
     existingLeads.push(leadData);
     localStorage.setItem('settlo_leads', JSON.stringify(existingLeads));
@@ -204,34 +191,12 @@ const Hero = () => {
       </div>
 
       <div className="container">
-        {/* Big Center Tagline */}
-        <div className="hero-main-tagline">
-          <span className="tagline-innovate">Innovate Ideas</span>
-          <span className="tagline-dot">•</span>
-          <span className="tagline-educate">Educate Minds</span>
-          <span className="tagline-dot">•</span>
-          <span className="tagline-connect">Connect Talents</span>
-        </div>
-
-        {/* Services Bar */}
-        <div className="services-bar">
-          {services.map((service, index) => (
-            <div key={index} className="service-item">
-              <service.icon size={24} />
-              <span>{service.label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Hero Content */}
+        {/* Main Title */}
         <div className="hero-content">
-          <div className="hero-badge">
-            <Star size={16} fill="#ffc107" color="#ffc107" />
-            <span>Trusted by 100+ Businesses in India</span>
-          </div>
           <h1 className="hero-title">
-            We Innovate Ideas
-            <span className="hero-highlight">& Educate Talents</span>
+            Build Smarter Businesses with
+            <br />
+            <span className="hero-highlight">AI & Cloud</span>
           </h1>
           <p className="hero-subtitle">
             Your trusted technology partner building <strong>smart CRM solutions, mobile apps & web platforms</strong> — 

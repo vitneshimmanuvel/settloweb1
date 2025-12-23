@@ -7,42 +7,42 @@ const Industries = () => {
 
   const industries = [
     {
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=200&fit=crop',
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&h=200&fit=crop',
       title: 'Healthcare',
       description: 'Digital health solutions for modern healthcare providers.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&h=200&fit=crop',
-      title: 'Education',
-      description: 'E-learning platforms and educational technology solutions.'
+      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=300&h=200&fit=crop',
+      title: 'Logistics',
+      description: 'Supply chain and logistics management solutions.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1560472355-536de3962603?w=300&h=200&fit=crop',
+      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=300&h=200&fit=crop',
       title: 'Finance',
       description: 'Fintech solutions for banking and financial services.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop',
+      image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=300&h=200&fit=crop',
       title: 'Retail',
       description: 'Omnichannel retail and e-commerce solutions.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop',
+      image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=300&h=200&fit=crop',
       title: 'Manufacturing',
       description: 'Industry 4.0 and smart manufacturing solutions.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&h=200&fit=crop',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=300&h=200&fit=crop',
       title: 'Real Estate',
       description: 'PropTech solutions for modern real estate.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=300&h=200&fit=crop',
       title: 'Technology',
       description: 'Custom software for tech startups and enterprises.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=300&h=200&fit=crop',
+      image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=300&h=200&fit=crop',
       title: 'Hospitality',
       description: 'Digital solutions for hotels and travel industry.'
     }

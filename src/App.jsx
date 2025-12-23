@@ -6,7 +6,6 @@ import WorkingStyle from './components/WorkingStyle/WorkingStyle';
 import Services from './components/Services/Services';
 import Benefits from './components/Benefits/Benefits';
 import TechSolutions from './components/TechSolutions/TechSolutions';
-import AISolutions from './components/AISolutions/AISolutions';
 import CTABanner from './components/CTABanner/CTABanner';
 import Stats from './components/Stats/Stats';
 import TechPartners from './components/TechPartners/TechPartners';
@@ -26,11 +25,8 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <WorkingStyle />
         <Services />
-        <Benefits />
         <TechSolutions />
-        <AISolutions />
         <CTABanner />
         <Stats />
         <TechPartners />
@@ -38,9 +34,9 @@ function App() {
         <Industries />
         <Excellence />
         <CaseStudies />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <ContactForm />
-        <Articles />
+        {/* <Articles /> */}
         <FAQs />
       </main>
       <Footer />

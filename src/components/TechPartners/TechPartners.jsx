@@ -5,9 +5,10 @@ const TechPartners = () => {
   const [activeTab, setActiveTab] = useState('partnerships');
 
   const partnerships = [
-    'Microsoft', 'Google Cloud', 'AWS', 'Salesforce', 'HubSpot', 
+    'Microsoft', 'Google Cloud', 'AWS', 'Salesforce', 'HubSpot',
     'Zoho', 'Drupal', 'Shopify', 'Magento', 'WordPress',
-    'React', 'Angular', 'Node.js', 'Python', 'PHP'
+    'React', 'Angular', 'Node.js', 'Python', 'PHP',
+    'Geo-fencing', 'Biometrics'
   ];
 
   const awards = [
@@ -28,13 +29,13 @@ const TechPartners = () => {
         </p>
 
         <div className="partners-tabs">
-          <button 
+          <button
             className={`partners-tab ${activeTab === 'partnerships' ? 'active' : ''}`}
             onClick={() => setActiveTab('partnerships')}
           >
             Partnerships
           </button>
-          <button 
+          <button
             className={`partners-tab ${activeTab === 'awards' ? 'active' : ''}`}
             onClick={() => setActiveTab('awards')}
           >

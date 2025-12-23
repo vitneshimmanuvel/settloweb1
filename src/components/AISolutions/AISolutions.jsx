@@ -20,15 +20,15 @@ const AISolutions = () => {
       }
     },
     {
-      title: 'Education & Training',
+      title: 'Business Analytics',
       icon: <FiBarChart2 size={20} />,
       content: {
-        description: 'Our Settlo Academy provides comprehensive training programs to upskill professionals with the latest technology knowledge.',
+        description: 'Transform your data into actionable insights with our advanced analytics solutions that drive smarter business decisions.',
         features: [
-          'Corporate Training Programs',
-          'Certification Courses',
-          'Hands-on Workshops',
-          'Mentorship Programs'
+          'Data Visualization Dashboards',
+          'Predictive Analytics',
+          'Real-time Reporting',
+          'Business Intelligence Tools'
         ]
       }
     },
@@ -52,7 +52,7 @@ const AISolutions = () => {
       <div className="container">
         <h2 className="section-title text-white">Our Core Services</h2>
         <p className="section-subtitle text-white" style={{ opacity: 0.8 }}>
-          Innovate Ideas • Educate Minds • Connect Talents
+          AI Solutions • Data Analytics • Cloud Services
         </p>
 
         <div className="ai-tabs">
