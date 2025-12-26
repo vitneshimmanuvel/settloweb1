@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
+import { Rocket, Building2, Target } from 'lucide-react';
 import './Excellence.css';
 
 const Excellence = () => {
@@ -84,7 +85,7 @@ const Excellence = () => {
               onClick={() => setActiveCard(index)}
             >
               <div className="excellence-card-icon">
-                {index === 0 ? '🚀' : index === 1 ? '🏢' : '🎯'}
+                {index === 0 ? <Rocket size={32} /> : index === 1 ? <Building2 size={32} /> : <Target size={32} />}
               </div>
               <h3 className="excellence-title">{type.title}</h3>
               <p className="excellence-description">{type.description}</p>

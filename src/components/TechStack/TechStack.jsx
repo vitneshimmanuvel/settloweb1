@@ -55,9 +55,7 @@ const TechStack = () => {
       <div className="container">
         <p className="tech-stack-label">TECHNOLOGIES</p>
         <h2 className="tech-stack-title">Our Technology Stack and Platforms</h2>
-        <p className="tech-stack-subtitle">
-          Over 1,000 experts with 23+ years of experience in over 50 cutting-edge technologies.
-        </p>
+        
       </div>
 
       {/* Auto-scrolling rows */}

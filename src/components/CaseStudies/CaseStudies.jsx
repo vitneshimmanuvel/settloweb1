@@ -1,4 +1,5 @@
 import './CaseStudies.css';
+import { BarChart3 } from 'lucide-react';
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -58,7 +59,7 @@ const CaseStudies = () => {
           {caseStudies.map((study, index) => (
             <div key={index} className="case-study-card">
               <div className="case-study-image">
-                <span className="case-study-placeholder">📊</span>
+                <span className="case-study-placeholder"><BarChart3 size={48} /></span>
               </div>
               <div className="case-study-content">
                 <span className="case-study-category">{study.category}</span>

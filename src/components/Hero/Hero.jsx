@@ -12,8 +12,13 @@ import {
   X,
   User,
   Mail,
-  Phone
+  Phone,
+  Rocket,
+  Zap,
+  Lock,
+  MessageCircle
 } from 'lucide-react';
+import { API_ENDPOINTS } from '../../config/api';
 import './Hero.css';
 
 const Hero = () => {
@@ -119,7 +124,9 @@ const Hero = () => {
       const newCount = demoClickCount + 1;
       setDemoClickCount(newCount);
       localStorage.setItem('settlo_demo_clicks', newCount.toString());
+      // Open link immediately
       window.open(demo.link, '_blank');
+      return; // Prevent modal from showing
     } else {
       // Require lead form
       setSelectedDemo(demo);
@@ -129,7 +136,7 @@ const Hero = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
@@ -153,21 +160,27 @@ const Hero = () => {
       return;
     }
 
-    // Store lead data
-    const leadData = {
-      name: formData.name,
-      email: formData.email,
-      phone: `${formData.countryCode} ${formData.phone}`,
-      demo: selectedDemo.label,
-      timestamp: new Date().toISOString()
-    };
-    
-    console.log('Lead captured:', leadData);
-    
-    // Store in localStorage
-    const existingLeads = JSON.parse(localStorage.getItem('settlo_leads') || '[]');
-    existingLeads.push(leadData);
-    localStorage.setItem('settlo_leads', JSON.stringify(existingLeads));
+    // Submit lead to backend
+    try {
+      const response = await fetch(API_ENDPOINTS.leads, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: `${formData.countryCode} ${formData.phone}`,
+          demo: selectedDemo.label,
+          source: 'hero'
+        }),
+      });
+
+      const data = await response.json();
+      console.log('Lead captured:', data);
+    } catch (error) {
+      console.error('Error submitting lead:', error);
+    }
 
     // Redirect to demo
     window.open(selectedDemo.link, '_blank');
@@ -206,7 +219,12 @@ const Hero = () => {
 
         {/* Demo Apps Section */}
         <div className="demo-section">
-          <h2 className="demo-title">🚀 Try Our FREE Demo Apps</h2>
+          <h2 className="demo-title"><Rocket size={24} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Try Our FREE Demo Apps</h2>
+          <p style={{ fontSize: '0.9rem', color: '#e0e0e0', marginBottom: '20px' }}>
+            {demoClickCount < 2 
+              ? `You have ${2 - demoClickCount} free demo${2 - demoClickCount === 1 ? '' : 's'} remaining`
+              : 'Fill the form to access more demos'}
+          </p>
           <div className="demo-grid">
             {demoApps.map((app, index) => {
               const IconComponent = app.icon;
@@ -231,10 +249,10 @@ const Hero = () => {
         {/* CTA Section */}
         <div className="hero-cta">
           <a href="#contact" className="btn btn-orange btn-lg">
-            💬 Reply "DEMO" — Get Your Customized App in 30 Minutes!
+            <MessageCircle size={18} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Reply "DEMO" — Get Your Customized App in 30 Minutes!
           </a>
           <p className="cta-subtext">
-            ⚡ Let's lock a 20-min slot this week — save hours of work daily!
+            <Zap size={18} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Let's lock a 20-min slot this week — save hours of work daily!
           </p>
         </div>
 
@@ -327,7 +345,7 @@ const Hero = () => {
               </button>
 
               <p className="form-disclaimer">
-                🔒 Your information is secure and will not be shared.
+                <Lock size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Your information is secure and will not be shared.
               </p>
             </form>
           </div>

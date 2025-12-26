@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Mail, Search } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Mail, Search, Wrench, Rocket, FileText } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -199,7 +199,7 @@ const Header = () => {
                             onClick={() => handleSearchSelect(item)}
                           >
                             <span className={`search-type ${item.type}`}>
-                              {item.type === 'service' ? '🛠️' : item.type === 'demo' ? '🚀' : '📄'}
+                              {item.type === 'service' ? <Wrench size={18} /> : item.type === 'demo' ? <Rocket size={18} /> : <FileText size={18} />}
                             </span>
                             <span className="search-label">{item.label}</span>
                           </button>

@@ -1,5 +1,6 @@
 import './TechPartners.css';
 import { useState } from 'react';
+import { Award } from 'lucide-react';
 
 const TechPartners = () => {
   const [activeTab, setActiveTab] = useState('partnerships');
@@ -56,7 +57,7 @@ const TechPartners = () => {
             <div className="awards-grid">
               {awards.map((award, index) => (
                 <div key={index} className="award-item">
-                  <span className="award-icon">🏆</span>
+                  <span className="award-icon"><Award size={32} /></span>
                   <span className="award-text">{award}</span>
                 </div>
               ))}

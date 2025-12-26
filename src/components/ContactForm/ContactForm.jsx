@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiShield, FiLock } from 'react-icons/fi';
+import { API_ENDPOINTS } from '../../config/api';
 import './ContactForm.css';
 
 const ContactForm = () => {
@@ -19,25 +20,36 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const leadData = {
-      ...formData,
-      timestamp: new Date().toISOString()
-    };
-    console.log('Contact form submitted:', leadData);
+    try {
+      const response = await fetch(API_ENDPOINTS.leads, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'contact'
+        }),
+      });
 
-    const existingLeads = JSON.parse(localStorage.getItem('settlo_contacts') || '[]');
-    existingLeads.push(leadData);
-    localStorage.setItem('settlo_contacts', JSON.stringify(existingLeads));
+      const data = await response.json();
 
-    setTimeout(() => {
-      alert('Thank you! We will contact you within 24 hours.');
-      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+      if (data.success) {
+        alert('Thank you! We will contact you within 24 hours.');
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Failed to submit. Please try again later.');
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   return (
@@ -74,7 +86,7 @@ const ContactForm = () => {
               </div>
               <div className="info-details">
                 <h4>Call Us</h4>
-                <a href="tel:+919876543210">+91 98765 43210</a>
+                <a href="tel:+919003633356">+91 9003633356</a>
               </div>
             </div>
 
