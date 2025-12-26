@@ -2,9 +2,9 @@ import { FiArrowRight } from 'react-icons/fi';
 import './TechStack.css';
 
 const TechStack = () => {
-  // Technology data with CDN logos
+
   const techRows = [
-    // Row 1
+   
     [
       { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
       { name: 'Drupal', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/drupal/drupal-plain.svg' },
@@ -15,7 +15,7 @@ const TechStack = () => {
       { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
       { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
     ],
-    // Row 2
+    
     [
       { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
       { name: 'Unity', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg', invert: true },
@@ -26,7 +26,7 @@ const TechStack = () => {
       { name: 'Kotlin', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg' },
       { name: 'GO Lang', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg' },
     ],
-    // Row 3
+    
     [
       { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
       { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
@@ -37,7 +37,7 @@ const TechStack = () => {
       { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
       { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
     ],
-    // Row 4
+ 
     [
       { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
       { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
@@ -58,7 +58,6 @@ const TechStack = () => {
         
       </div>
 
-      {/* Auto-scrolling rows */}
       <div className="tech-scroll-container">
         {techRows.map((row, rowIndex) => (
           <div 
@@ -66,7 +65,7 @@ const TechStack = () => {
             className={`tech-scroll-row ${rowIndex % 2 === 0 ? 'scroll-left' : 'scroll-right'}`}
           >
             <div className="tech-scroll-track">
-              {/* Duplicate items for seamless scroll */}
+
               {[...row, ...row].map((tech, techIndex) => (
                 <div key={techIndex} className="tech-pill">
                   <img 
