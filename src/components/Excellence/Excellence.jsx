@@ -69,7 +69,7 @@ const Excellence = () => {
   ];
 
   return (
-    <section className="excellence section">
+    <section className="excellence section" id="about">
       <div className="container">
         <h2 className="section-title">Leading the Industry With Excellence</h2>
         <p className="section-subtitle">

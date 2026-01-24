@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Mail, Search, Wrench, Rocket, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown, Phone, Mail, Search, Wrench, Rocket, FileText, GraduationCap } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -93,6 +94,17 @@ const Header = () => {
         { label: 'Retail & E-commerce', href: '#' },
       ]
     },
+    {
+      label: 'Academy',
+      hasDropdown: true,
+      items: [
+        { label: 'All Courses', href: '/academy', isRoute: true },
+        { label: 'Design Courses', href: '/academy/design-courses', isRoute: true },
+        { label: 'Master Courses', href: '/academy/master-courses', isRoute: true },
+        { label: 'Fullstack Courses', href: '/academy/fullstack-courses', isRoute: true },
+        { label: 'Mastery Courses', href: '/academy/mastery-courses', isRoute: true },
+      ]
+    },
     { label: 'About Us', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -146,15 +158,25 @@ const Header = () => {
                   {item.hasDropdown && activeDropdown === index && (
                     <div className="dropdown-menu">
                       {item.items.map((subItem, subIndex) => (
-                        <a
-                          key={subIndex}
-                          href={subItem.href}
-                          className="dropdown-item"
-                          target={subItem.href.startsWith('http') ? '_blank' : '_self'}
-                          rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                        >
-                          {subItem.label}
-                        </a>
+                        subItem.isRoute ? (
+                          <Link
+                            key={subIndex}
+                            to={subItem.href}
+                            className="dropdown-item"
+                          >
+                            {subItem.label}
+                          </Link>
+                        ) : (
+                          <a
+                            key={subIndex}
+                            href={subItem.href}
+                            className="dropdown-item"
+                            target={subItem.href.startsWith('http') ? '_blank' : '_self'}
+                            rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                          >
+                            {subItem.label}
+                          </a>
+                        )
                       ))}
                     </div>
                   )}
@@ -255,14 +277,25 @@ const Header = () => {
               {item.hasDropdown && activeDropdown === index && (
                 <div className="mobile-dropdown">
                   {item.items.map((subItem, subIndex) => (
-                    <a
-                      key={subIndex}
-                      href={subItem.href}
-                      className="mobile-dropdown-item"
-                      target={subItem.href.startsWith('http') ? '_blank' : '_self'}
-                    >
-                      {subItem.label}
-                    </a>
+                    subItem.isRoute ? (
+                      <Link
+                        key={subIndex}
+                        to={subItem.href}
+                        className="mobile-dropdown-item"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ) : (
+                      <a
+                        key={subIndex}
+                        href={subItem.href}
+                        className="mobile-dropdown-item"
+                        target={subItem.href.startsWith('http') ? '_blank' : '_self'}
+                      >
+                        {subItem.label}
+                      </a>
+                    )
                   ))}
                 </div>
               )}

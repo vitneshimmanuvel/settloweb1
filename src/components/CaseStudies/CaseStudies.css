@@ -1,94 +1,127 @@
-/* Case Studies Section Styles */
+/* Case Studies / Client Success Stories Section */
 .case-studies {
-  background: #f5f7fa;
+  background: #f8f9fa;
+  padding: 80px 0;
 }
 
-.case-studies-grid {
+.testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.case-study-card {
+.testimonial-card {
   background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
-.case-study-card:hover {
+.testimonial-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
-.case-study-image {
-  height: 180px;
-  background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+.industry-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+
+.quote-icon {
+  font-size: 3rem;
+  color: #e0e0e0;
+  line-height: 1;
+  margin-bottom: 15px;
+  font-family: Georgia, serif;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.testimonial-author {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.case-study-placeholder {
-  font-size: 4rem;
-  opacity: 0.5;
-}
-
-.case-study-content {
-  padding: 24px;
-}
-
-.case-study-category {
-  display: inline-block;
-  padding: 4px 12px;
-  background: #e8f4fd;
-  color: #0066cc;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.case-study-title {
-  font-size: 1.1rem;
+.author-role {
   font-weight: 700;
   color: #1a1a2e;
-  line-height: 1.4;
-  margin-bottom: 16px;
+  font-size: 0.95rem;
 }
 
-.case-study-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
+.author-separator {
+  color: #ccc;
 }
 
-.case-study-country {
+.author-company {
   color: #6c757d;
+  font-size: 0.95rem;
 }
 
-.case-study-tech {
-  color: #0066cc;
+.testimonial-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: #f0f0f5;
+  color: #1a1a2e;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 500;
+  border: 1px solid #e8e8ed;
+  transition: all 0.3s;
 }
 
-.case-studies-cta {
-  text-align: center;
+.tag:hover {
+  background: #1a1a2e;
+  color: #fff;
+  border-color: #1a1a2e;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .case-studies-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 }
 
 @media (max-width: 576px) {
-  .case-studies-grid {
-    grid-template-columns: 1fr;
+  .testimonial-card {
+    padding: 25px;
+  }
+  
+  .industry-badge {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+  
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+  
+  .quote-icon {
+    font-size: 2.5rem;
   }
 }

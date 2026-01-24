@@ -1,49 +1,34 @@
 import './CaseStudies.css';
-import { BarChart3 } from 'lucide-react';
 
 const CaseStudies = () => {
-  const caseStudies = [
+  const testimonials = [
     {
-      category: 'Website Upgradation',
-      title: 'From YII to Drupal 10: A Smooth Website Migration Journey',
-      country: 'US',
-      technology: 'Drupal',
-      flag: '🇺🇸'
+      industry: 'Sweet Industry',
+      testimonial: 'We had a great experience working with the Settlo team for the CRM we were struggling to build. Together, we figured out what we needed and organized everything meaningfully. The system was created with face recognition and geo-fetching features. We got great effort and services with excellent error handling.',
+      role: 'CEO',
+      company: 'SRM',
+      tags: ['CRM', 'Face Recognition', 'Geo-Fetching']
     },
     {
-      category: 'Website Development',
-      title: 'Empowering Structsight with a Real-Time Investment Platform',
-      country: 'US',
-      technology: 'Drupal',
-      flag: '🇺🇸'
+      industry: 'Roofing Industry',
+      testimonial: 'We have entered the new AI era with the help of the Settlo team. They created a beautiful website with AI integration - a chatbot that answers questions about our products and services. The website has great interactions, and they even built a live roof visualizer that shows different patterns and colors, helping us verify designs with clients.',
+      role: 'CEO',
+      company: 'Roofing Solutions',
+      tags: ['AI Integration', 'Chatbot', 'Website Development']
     },
     {
-      category: 'Website Upgradation',
-      title: 'Transforming Chardham Travel with a Custom Drupal Solution',
-      country: 'India',
-      technology: 'Drupal',
-      flag: '🇮🇳'
+      industry: 'Scaling Industry',
+      testimonial: 'We created a good product showcase website with accurate data. All products and categories are included properly organized. I didn\'t know how to categorize all the stuff and scaling requirements, but they helped me understand my own business in a technical manner. Truly professional work!',
+      role: 'CEO',
+      company: 'Scale Solutions',
+      tags: ['E-Commerce', 'Product Catalog', 'Web Development']
     },
     {
-      category: 'Website & Enterprise Application',
-      title: 'Settlo Enhances Networking Opportunities for GonnaHappen',
-      country: 'GB',
-      technology: 'Drupal',
-      flag: '🇬🇧'
-    },
-    {
-      category: 'App Development',
-      title: 'State Wide Logistics: Delivering Excellence with Precision and Innovation',
-      country: 'AU',
-      technology: 'Microsoft .NET 6',
-      flag: '🇦🇺'
-    },
-    {
-      category: 'Website Upgradation',
-      title: 'Seamless Drupal Upgrade: From 8.9 to 10.3',
-      country: 'GB',
-      technology: 'Drupal, React, Elastic Search',
-      flag: '🇬🇧'
+      industry: 'Clothing Industry',
+      testimonial: 'I thought creating and structuring a product menu for clients in the textile industry - with all the sizes, thickness varieties, and seasons - would be impossible. But they gave me an admin panel where I can add categories and control my website entirely. I can update the website myself now. Thankful to the team!',
+      role: 'CEO',
+      company: 'Textile Hub',
+      tags: ['Admin Panel', 'E-Commerce', 'Inventory Management']
     }
   ];
 
@@ -55,30 +40,28 @@ const CaseStudies = () => {
           Grow your business with a team that wants to see you win
         </p>
 
-        <div className="case-studies-grid">
-          {caseStudies.map((study, index) => (
-            <div key={index} className="case-study-card">
-              <div className="case-study-image">
-                <span className="case-study-placeholder"><BarChart3 size={48} /></span>
+        <div className="testimonials-grid">
+          {testimonials.map((item, index) => (
+            <div key={index} className="testimonial-card">
+              <span className="industry-badge">{item.industry}</span>
+              
+              <div className="quote-icon">❝</div>
+              
+              <p className="testimonial-text">{item.testimonial}</p>
+              
+              <div className="testimonial-author">
+                <span className="author-role">{item.role}</span>
+                <span className="author-separator">•</span>
+                <span className="author-company">{item.company}</span>
               </div>
-              <div className="case-study-content">
-                <span className="case-study-category">{study.category}</span>
-                <h3 className="case-study-title">{study.title}</h3>
-                <div className="case-study-meta">
-                  <span className="case-study-country">
-                    {study.flag} {study.country}
-                  </span>
-                  <span className="case-study-tech">{study.technology}</span>
-                </div>
+              
+              <div className="testimonial-tags">
+                {item.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="tag">{tag}</span>
+                ))}
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="case-studies-cta">
-          <a href="#" className="btn btn-primary btn-lg">
-            Read All Our Success Stories
-          </a>
         </div>
       </div>
     </section>
