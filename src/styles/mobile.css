@@ -644,12 +644,15 @@
         gap: 20px;
     }
 
-    .stat-number {
+    .stat-number,
+    .stat-value {
         font-size: 2rem;
+        color: #000000 !important;
     }
 
     .stat-label {
         font-size: 0.85rem;
+        color: #000000 !important;
     }
 }
 
@@ -661,6 +664,14 @@
 
     .stat-item {
         padding: 20px;
+    }
+
+    .stat-value {
+        color: #000000 !important;
+    }
+
+    .stat-label {
+        color: #000000 !important;
     }
 }
 
