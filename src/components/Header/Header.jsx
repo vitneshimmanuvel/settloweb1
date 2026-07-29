@@ -138,7 +138,7 @@ const Header = () => {
           <div className="header-main-content">
             {/* Logo */}
             <a href="/" className="logo">
-              <img src="/settlo-logo.png" alt="Settlo" className="logo-image" />
+              <img src="/settlo-logo-icon.png" alt="Settlo Logo" className="logo-image" />
               <span className="logo-text">SETTLO</span>
             </a>
 
